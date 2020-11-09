@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container my-5">
+    <h3> Api Call Details </h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-8">
+                <form action="#" th:action="@{/students/update/{id}(id=${apicall.id})}" th:object="${apicall}" method="post">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="id" class="col-form-label">ID</label> <input type="text" th:field="*{id}" class="form-control" id="id" placeholder="Enter Id" readonly> <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="status" class="col-form-label">Status</label> <input type="text" th:field="*{city.status}" class="form-control" id="status" placeholder="Enter Status" readonly> <!--<span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="city" class="col-form-label">City</label> <input type="text" th:field="*{city.data.city}" class="form-control" id="city" placeholder="Enter City" readonly> <!--<span th:if="${#fields.hasErrors('city')}" th:errors="*{city.data.city}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="state" class="col-form-label">State</label> <input type="text" th:field="*{city.data.state}" class="form-control" id="state" placeholder="Enter State" readonly> <!--<span th:if="${#fields.hasErrors('state')}" th:errors="*{city.data.state}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="country" class="col-form-label">Country</label> <input type="text" th:field="*{city.data.country}" class="form-control" id="country" placeholder="Enter Country" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="type" class="col-form-label">Type</label> <input type="text" th:field="*{city.data.location.type}" class="form-control" id="type" placeholder="Enter Type" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="coordinates" class="col-form-label">Coordinates</label> <input type="text" th:field="*{city.data.location.coordinates}" class="form-control" id="coordinates" placeholder="Enter Coordinates" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="weatherts" class="col-form-label">Weather TS</label> <input type="text" th:field="*{city.data.current.weather.ts}" class="form-control" id="weatherts" placeholder="Enter Weather TS" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="tp" class="col-form-label">TP</label> <input type="text" th:field="*{city.data.current.weather.tp}" class="form-control" id="tp" placeholder="Enter TP" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="pr" class="col-form-label">PR</label> <input type="text" th:field="*{city.data.current.weather.pr}" class="form-control" id="pr" placeholder="Enter PR" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="hu" class="col-form-label">HU</label> <input type="text" th:field="*{city.data.current.weather.hu}" class="form-control" id="hu" placeholder="Enter HU" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="ws" class="col-form-label">WS</label> <input type="text" th:field="*{city.data.current.weather.ws}" class="form-control" id="ws" placeholder="Enter WS" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="wd" class="col-form-label">WD</label> <input type="text" th:field="*{city.data.current.weather.wd}" class="form-control" id="wd" placeholder="Enter WD" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="ic" class="col-form-label">IC</label> <input type="text" th:field="*{city.data.current.weather.ic}" class="form-control" id="ic" placeholder="Enter IC" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="pollutionts" class="col-form-label">Pollution TS</label> <input type="text" th:field="*{city.data.current.pollution.ts}" class="form-control" id="pollutionts" placeholder="Enter Pollution TS" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="aqius" class="col-form-label">Aqius</label> <input type="text" th:field="*{city.data.current.pollution.aqius}" class="form-control" id="aqius" placeholder="Enter Aqius" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="mainus" class="col-form-label">Mainus</label> <input type="text" th:field="*{city.data.current.pollution.mainus}" class="form-control" id="mainus" placeholder="Enter Mainus" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="aqicn" class="col-form-label">Aqicn</label> <input type="text" th:field="*{city.data.current.pollution.aqicn}" class="form-control" id="aqicn" placeholder="Enter Aqicn" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="maincn" class="col-form-label">Maincn</label> <input type="text" th:field="*{city.data.current.pollution.maincn}" class="form-control" id="maincn" placeholder="Enter Maincn" readonly> <!--<span th:if="${#fields.hasErrors('country')}" th:errors="*{city.data.country}" class="text-danger"></span>-->
+                        </div>
+
+
+                       <!-- <div class="form-group col-md-8">
+                            <input type="submit" class="btn btn-primary" value="Update Student">
+                        </div>-->
+                    </div>
+                </form>
+                    <a th:href="@{/website/list}" class="btn btn-primary mb-3" >Return to List</a>
+            </div>
+        </div>
+       <!-- <div class="col-md-8">
+            <a th:href="@{/website/list}" class="btn btn-primary mb-3" >Return to List</a>
+        </div>-->
+    </div>
+</div>
+</body>
+
+</html>
